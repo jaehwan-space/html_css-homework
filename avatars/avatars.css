@@ -1,0 +1,55 @@
+/* float을 사용한 레이아웃 */
+.women, .men {
+  width: 336px;
+  margin: 0 auto;
+}
+
+.person {
+  position: relative;
+  float: left;
+}
+
+.images {
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+}
+
+.online {
+  background-color: #4CFE88;
+  border-radius: 100%;
+  border: 2px solid #FFFFFF;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 55px;
+  left: 55px;
+}
+
+.offline {
+  background-color: #DBDBDB;
+  border-radius: 100%;
+  border: 2px solid #FFFFFF;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 55px;
+  left: 55px;
+}
+
+/* flex을 사용한 레이아웃 */
+@supports (display: flex) {
+  body {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .women {
+    order: 2;
+  }
+
+  .men {
+    order: 1;
+  }
+}
