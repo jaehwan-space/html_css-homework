@@ -4,4 +4,4 @@
 
 ## 과제 1
 > Avatars 레이아웃 float, flex로 구현하기 
-[[링크]](https://github.com/jaehwan-space/homework/blob/main/avatars/avatars.md) - 2024년 5월 3일
+> [[링크]](https://github.com/jaehwan-space/homework/blob/main/avatars/avatars.md) - 2024년 5월 3일
