@@ -1,6 +1,6 @@
 # Homework 1
 - 과제일: 2024년 5월 3일
-- Avatars - float, flex를 활용하여 레이아웃 완성하기
+- 과제 내용: Avatars - float, flex를 활용하여 레이아웃 완성하기
 ***
 ## HTML
 1. ```img``` 태그를 활용하여 콘텐츠 이미지로 마크업했습니다.
@@ -8,12 +8,12 @@
 ```html
 <img class="images" src="../images/faces/face1.jpg" alt="여성 얼굴1" />
 ```
-2. ```div``` 태그를 활용하여 온라인/오프라인을 구분하는 아이콘을 만들었으며 aria-label속성도 부여하여 접근성을 향상해보았습니다.
+2. ```div``` 태그를 활용하여 온라인/오프라인을 구분하는 아이콘을 만들었으며 aria-label 속성도 부여하여 접근성을 향상해보았습니다.
 ```html
 <div class="offline" aria-label="오프라인"></div>
 <div class="online" aria-label="온라인"></div>
 ```
-3. 이후 person 클래스와 women, men으로 태그를 그룹화하였습니다.
+3. 이후 person 클래스와 women, men 클래스 태그를 그룹화하였습니다.
 ```html
 <div class="women">
   <div class="person">
