@@ -1,0 +1,166 @@
+:root {
+  --normal_font-size: 1rem;
+  --normal_color: #181818;
+  --focus_color: #24388d;
+}
+
+.sr-only {
+  overflow: hidden;
+  border: 0;
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+body *, body *::before, body *::after{
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 14.375rem;
+}
+
+.login-section {
+  width: 100%;
+  padding: 0 1.25rem;
+}
+
+.login-form {
+
+  > fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    border: none;
+    gap: 1.25rem;
+  }
+
+  .form-input {
+    display: flex;
+
+    input {
+      flex-grow: 1;
+
+      font-size: 0.875rem;
+      width: 100%;
+      height: 45px;
+      block-size: 45px;
+      border: 1px solid #dadada;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    input:focus {
+      outline: 1px solid #03cf5d;
+      border-radius: 2px;
+      background-color: #e9f0fd;
+    }
+  }
+}
+
+.login-button {
+  font-size: var(--normal_font-size);
+  width: 100%;
+  height: 2.8125rem;
+  block-size: 2.8125rem;
+  color: #fff;
+  background-color: #03cf5d;
+  border: none;
+}
+
+.form-checkbox{
+  position: relative;
+  margin: 0.625rem;
+  float: right;
+
+  input{
+    position: absolute;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  label{
+    background: url(./icons/unchecked.svg) no-repeat 0 0 /contain;
+    padding-left: 1.5625rem;
+    padding-right: 0.3125rem;
+    cursor: pointer;
+  }
+
+  input:checked + label{
+    background-image: url(./icons/checked.svg);
+  }
+  
+  input:focus-visible{
+    outline: 2px solid var(--focus_color);
+  }
+}
+
+.security-warpper {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .additional-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .security-warpper {
+    display: block;
+    position: relative;
+    float: right;
+    margin: 0.625rem 1.25rem;
+
+    > a {
+      text-decoration: none;
+    }
+    > a:active {
+      color: var(--normal_color);
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-block;
+
+      input {
+        position: absolute;
+        appearance: none;
+      }
+
+      label {
+        cursor: pointer;
+
+        &::before {
+          content: "OFF";
+          color: #b1b1b1;
+        }
+      }
+
+      input:focus-visible + label {
+        outline: 2px solid var(--focus_color);
+        border-radius: 0.25em;
+      }
+
+      input:checked + label {
+        &::before {
+          content: "";
+        }
+
+        &::after {
+          content: "ON";
+          color: #03cf5d;
+        }
+      }
+    }
+  }
+}
