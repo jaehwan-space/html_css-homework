@@ -1,3 +1,92 @@
-@import url(card-component.css);
+@import url(reset.css);
+@import url(base.css);
+@import url(theme.css);
 
-/* 카드 레이아웃 */
+
+/* 카드 컴포넌트 */
+.card-wrapper{
+  background-color: black; /* 나중에 삭제 */ 
+
+  --small-text-color: var(--gray);
+}
+
+
+/* 버튼 컴포넌트 */
+
+.button-wrapper {
+  --button-gap: var(--small-spacing);
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--button-gap);
+  .button {
+    --button-padding-updown: var(--x-small-spacing);
+    --button-padding-leftright: var(--small-spacing);
+  
+    --default-text-color: var(--white);
+  
+    --dark-default-color: var(--dark-200);
+    --dark-hover-color: var(--dark-100);
+    --default-color: var(--blue-300);
+    --active-color: var(--blue-400);
+    --hover-color: var(--blue-200);
+  
+    padding: var(--button-padding-updown) var(--button-padding-leftright);
+    border-radius: 1.25rem;
+  
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+.button-colored-blue {
+  background-color: var(--default-color);
+
+  color: var(--default-text-color);
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+
+  &:active {
+    background-color: var(--active-color);
+  }
+}
+
+.button-transparent-blue {
+  background-color: transparent;
+
+  color: var(--default-color);
+  border: 1px solid var(--default-color);
+
+  &:hover {
+    color: var(--default-text-color);
+    background-color: var(--hover-color);
+  }
+
+  &:active {
+    background-color: var(--active-color);
+  }
+}
+
+.button-colored-black {
+  background-color: var(--dark-default-color);
+
+  color: var(--default-text-color);
+
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+}
+
+.button-transparent-black {
+  background-color: transparent;
+
+  color: var(--dark-default-color);
+  border: 1px solid var(--dark-default-color);
+
+  &:hover {
+    color: var(--default-text-color);
+    background-color: var(--dark-hover-color);
+  }
+}
