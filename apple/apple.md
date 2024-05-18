@@ -138,9 +138,9 @@
 <img src="./md-images/result.png" alt="결과물">
 
 ### 문법 검사 및 브라우저 크로스 체크
-<img src="./md-images/browser-crosscheck.PNG" alt="결과물">
-<img src="./md-images/html-grammer.PNG" alt="결과물">
-<img src="./md-images/headings.PNG" alt="결과물">
+<img src="./md-images/browser-crosscheck.png" alt="웹 브라우저 크로스체크 결과물">
+<img src="./md-images/html-grammer.png" alt="html 문법 검사">
+<img src="./md-images/headings.png" alt="heading 리스트">
 
 - Firefox와 Chrome에서 크로스 체크를 진행하였으며 별다른 문제는 없었다.
 - html 마크업 구조의 문법 검사 시 별다른 오류가 없었다.
