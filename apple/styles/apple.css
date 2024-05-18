@@ -218,7 +218,7 @@
 
   .large {
     grid-column: span 2;
-    height: 600px;
+    height: 37.5rem; /* 600px */
   }
 
   /* 텍스트 */
