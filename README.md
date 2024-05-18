@@ -9,3 +9,7 @@
 ## 과제 2
 > Naver 로그인 화면 구현  
 > [[링크]](https://github.com/jaehwan-space/homework/blob/main/naver/naver.md) - 2024년 5월 10일
+
+## 과제 3
+> apple 제품 카드
+> [[링크]](https://github.com/jaehwan-space/homework/blob/main/apple/apple.md) - 2024년 5월 16일
