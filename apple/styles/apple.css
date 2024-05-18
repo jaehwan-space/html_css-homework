@@ -2,29 +2,154 @@
 @import url(base.css);
 @import url(theme.css);
 
+/* 카드 레이아웃 */
+.cards-wrapper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+}
 
 /* 카드 컴포넌트 */
-.card-wrapper{
-  background-color: black; /* 나중에 삭제 */ 
+.card {
+  --height-size: var(--size);
 
-  --small-text-color: var(--gray);
+  height: var(--height-size);
+
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 컬러 테마 */
+.color-dark {
+  .title, .description {
+    color: var(--default-text-color);
+  }
+
+  .button-colored {
+    background-color: var(--default-color);
+
+    color: var(--default-text-color);
+  }
+
+  .button-transparent {
+    background-color: transparent;
+
+    color: var(--default-color);
+    border: 1.5px solid var(--default-color);
+  
+    &:hover {
+      color: var(--default-text-color);
+    }
+  }
+
+  .button-colored, .button-transparent {
+    &:hover {
+      background-color: var(--hover-color);
+    }
+  
+    &:active {
+      background-color: var(--active-color);
+    }
+  }
+}
+
+.color-light {
+  .title, .description {
+    color: var(--black-text-color);
+  }
+
+  .button-colored {
+    background-color: var(--dark-default-color);
+  
+    color: var(--default-text-color);
+  
+    &:hover {
+      background-color: var(--dark-hover-color);
+    }
+  }
+  
+  .button-transparent {
+    background-color: transparent;
+  
+    color: var(--dark-default-color);
+    border: 1.5px solid var(--dark-default-color);
+  
+    &:hover {
+      color: var(--default-text-color);
+      background-color: var(--dark-hover-color);
+    }
+  }
+}
+
+/* 텍스트 컴포넌트 */
+.text-wrapper {
+  --default-text-color: var(--white);
+  --black-text-color: var(--dark-200);
+
+  --contents-gap: var(--small-spacing);
+  --des-gap: var(--x-small-spacing);
+  --default-top-gap: var(--large-spacing);
+  --large-top-gap: var(--extra-large-spacing);
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding-top: var(--default-top-gap);
+  
+  .title {
+    --default-text-size: var(--large-text);
+    --large-text-size: var(--extra-large-text);
+
+    font-size: var(--default-text-size);
+    font-weight: 700;
+  }
+
+  .description {
+    --default-text-size: var(--base-text);
+    --large-text-size: var(--medium-text);
+    --text-line-height: var(--line-normal);
+
+    margin-top: var(--contents-gap);
+    margin-bottom: var(--des-gap);
+
+    font-size: var(--default-text-size);
+    font-weight: 500;
+    line-height: var(--text-line-height);
+  }
+
+  .release {
+    --text-size: var(--small-text);
+    --gray-text-color: var(--gray);
+
+    margin-bottom: var(--contents-gap);
+
+    font-size: var(--text-size);
+    color: var(--gray-text-color);
+  }
 }
 
 
 /* 버튼 컴포넌트 */
-
 .button-wrapper {
-  --button-gap: var(--small-spacing);
+  --button-gap: var(--base-spacing);
 
   display: flex;
   flex-flow: row nowrap;
   gap: var(--button-gap);
+
   .button {
     --button-padding-updown: var(--x-small-spacing);
     --button-padding-leftright: var(--small-spacing);
-  
-    --default-text-color: var(--white);
-  
+
+    --default-text-size: var(--xx-small-text);
+    --large-text-size: var(--x-small-text);
+
     --dark-default-color: var(--dark-200);
     --dark-hover-color: var(--dark-100);
     --default-color: var(--blue-300);
@@ -33,60 +158,102 @@
   
     padding: var(--button-padding-updown) var(--button-padding-leftright);
     border-radius: 1.25rem;
-  
+
     cursor: pointer;
-    text-align: center;
+    font-size: var(--default-text-size);
+    font-weight: 500;
   }
 }
 
-.button-colored-blue {
-  background-color: var(--default-color);
-
-  color: var(--default-text-color);
-
-  &:hover {
-    background-color: var(--hover-color);
-  }
-
-  &:active {
-    background-color: var(--active-color);
-  }
+/* 이미지 처리 */
+.ipadpro{
+  background-image:image-set(
+  url(../products/ipad_pro.jpeg) 1x, 
+  url(../products/ipad_pro_2x.jpeg) 2x);
 }
 
-.button-transparent-blue {
-  background-color: transparent;
-
-  color: var(--default-color);
-  border: 1px solid var(--default-color);
-
-  &:hover {
-    color: var(--default-text-color);
-    background-color: var(--hover-color);
-  }
-
-  &:active {
-    background-color: var(--active-color);
-  }
+.ipadair{
+  background-image:image-set(
+  url(../products/ipad_air.jpeg) 1x, 
+  url(../products/ipad_air_2x.jpeg) 2x);
 }
 
-.button-colored-black {
-  background-color: var(--dark-default-color);
-
-  color: var(--default-text-color);
-
-  &:hover {
-    background-color: var(--dark-hover-color);
-  }
+.iphone15pro {
+  background-image:image-set(
+    url(../products/iphone15_pro.jpeg) 1x, 
+    url(../products/iphone15_pro_2x.jpeg) 2x);
 }
 
-.button-transparent-black {
-  background-color: transparent;
+.iphone15 {
+  background-image:image-set(
+    url(../products/iphone15.jpeg) 1x, 
+    url(../products/iphone15_2x.jpeg) 2x);
+}
 
-  color: var(--dark-default-color);
-  border: 1px solid var(--dark-default-color);
+.watch {
+  background-image:image-set(
+    url(../products/apple_watch.jpeg) 1x, 
+    url(../products/apple_watch_2x.jpeg) 2x);
+}
 
-  &:hover {
-    color: var(--default-text-color);
-    background-color: var(--dark-hover-color);
+.macbookair {
+  background-image:image-set(
+    url(../products/macbook_air.jpeg) 1x, 
+    url(../products/macbook_air_2x.jpeg) 2x);
+}
+
+.airpodspro {
+  background-image:image-set(
+    url(../products/airpods_pro.jpeg) 1x, 
+    url(../products/airpods_pro_2x.jpeg) 2x);
+}
+
+
+/* large Screen 설정 */
+@media (min-width: 1024px) {
+  /* 카드 레이아웃 */
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .large {
+    grid-column: span 2;
+    height: 600px;
+  }
+
+  /* 텍스트 */
+  .text-wrapper {
+    padding-top: var(--large-top-gap);
+
+    .title, .description {
+      font-size: var(--large-text-size);
+    }
+  }
+
+  /* 버튼 */
+  .button-wrapper{
+    .button {
+      font-size: var(--large-text-size);
+    }
+  }
+  
+
+  /* 이미지 처리 */
+  .ipadpro{
+    background-image:image-set(
+    url(../products/ipad_pro_wide.jpeg) 1x, 
+    url(../products/ipad_pro_wide_2x.jpeg) 2x);
+  }
+  
+  .ipadair{
+    background-image:image-set(
+    url(../products/ipad_air_wide.jpeg) 1x, 
+    url(../products/ipad_air_wide_2x.jpeg) 2x);
+  }
+  
+  .iphone15pro {
+    background-image:image-set(
+      url(../products/iphone15_pro_wide.jpeg) 1x, 
+      url(../products/iphone15_pro_wide_2x.jpeg) 2x);
   }
 }
